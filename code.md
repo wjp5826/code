@@ -1,6 +1,6 @@
 ```(javascript)
  /**
-       * 判断
+       * 判断内容是否超限
        * @param content 判断的内容
        * @param contentWidth 容器宽度
        * @param lineCount 内容行数
