@@ -21,3 +21,12 @@ function isExtension (content, contentWidth, lineCount, fontSize) {
         return elWidth >= (contentWidth * lineCount - 5)   // 判断这个临时div的宽度是否大于原节点宽度的两倍
       },
 ```
+
+```
+/**
+ * 是否是base64
+ */
+function isBase64(str) {
+  return window.Base64.encode(window.Base64.decode(str)) === str;
+};
+```
