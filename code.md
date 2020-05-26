@@ -30,3 +30,25 @@ function isBase64(str) {
   return window.Base64.encode(window.Base64.decode(str)) === str;
 };
 ```
+
+```
+// 选择文件
+function selectFile (accept, change) {
+  const fileInput = document.querySelector('#file-upload')
+  // const fileInput = document.createElement('input');
+  fileInput.accept = accept
+  // fileInput.addEventListener('change', function () {
+  //   change(this.files[0]);
+  //   fileInput.value = '';
+  // });
+  // todo 后续优化
+  fileInput.onchange = function (e) { // 兼容ie
+    const file = e.target.files[0]
+    if (!file) return
+    change(file)
+    fileInput.value = ''
+    fileInput.parentNode.replaceChild(fileInput.cloneNode(), fileInput)
+  }
+  fileInput.click()
+}
+```
