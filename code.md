@@ -93,3 +93,19 @@ function sumString(a, b) {
 }
 
 ```
+
+```
+// 计算字符串的字符数量
+function countCharacters (str) {
+  let totalCount = 0;
+  for (let i = 0; i < str.length; i++) {
+    const c = str.charCodeAt(i);
+    if ((c >= 0x0001 && c <= 0x007e) || (c >= 0xff60 && c <= 0xff9f)) {
+      totalCount++;
+    } else {
+      totalCount += 2;
+    }
+  }
+  return totalCount;
+};
+```
